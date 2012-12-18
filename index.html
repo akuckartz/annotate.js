@@ -42,6 +42,11 @@
         document.write('<' + 'script src="lib/json/json2.js">/script>"></' + 'script>');
     }
     $(document).ready(function(){ _.defer(function(){
+        $.ajaxSetup( {
+        	// for mobile devices, hopefully that works
+        	timeout: 300000
+        });
+
         $('#loadingDiv')
         .hide()  // hide it initially
         .ajaxStart(function() {
