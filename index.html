@@ -47,7 +47,7 @@
             timeout: 300000
         });
 
-        _.defer(function(){
+//        _.defer(function(){
         $('#loadingDiv')
         .hide()  // hide it initially
         .ajaxStart(function() {
@@ -61,7 +61,6 @@
             url : "http://dev.iks-project.eu:8081",
             proxyDisabled: true
         }));
-        // end of defer
         
         // make the content element editable
         $('.content').hallo({
@@ -175,7 +174,8 @@
         jQuery('.listDom').button().click(function(){
             alert(jQuery('.content')[0].outerHTML);
         });
-    });});
+    });
+//  }); // end of defer
     </script>
   </head>
   <body  xmlns:sioc     = "http://rdfs.org/sioc/ns#"
