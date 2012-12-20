@@ -66,7 +66,7 @@ function convertHtmlToText( inputText ) {
     returnText=returnText.replace(/<a.*href="(.*?)".*>(.*?)<\/a>/gi, " $2 ($1)");
 
     //-- remove span tags but preserve what's inside of them
-    returnText=returnText.replace(/<span.*>/gi, " ");
+    returnText=returnText.replace(/<span.*>(.*?)<\/span>/gi, " $2 ");
     
     //-- remove all inside SCRIPT and STYLE tags
     returnText=returnText.replace(/<script.*>[\w\W]{1,}(.*?)[\w\W]{1,}<\/script>/gi, "");
