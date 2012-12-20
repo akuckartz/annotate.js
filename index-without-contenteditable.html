@@ -176,6 +176,14 @@
             alert(jQuery('.textContent').val());
         });
         
+        jQuery('.copyText').button().click(function(){
+            jQuery('.content')[0].outerHTML( jQuery('.textContent').val());
+        });
+
+        jQuery('.copyDom').button().click(function(){
+            jQuery('.textContent').val( jQuery('.content')[0].outerHTML );
+        });
+
         jQuery('.listDom').button().click(function(){
             alert(jQuery('.content')[0].outerHTML);
         });
@@ -210,7 +218,9 @@
             <button class="enable">Enable</button>
             <button class="disable">Disable</button>
             <button class="showText">Show text in textarea</button>
-            <button class="listDom">Show Dom Html</button>            
+            <button class="copyText">Copy textarea to DOM</button>
+            <button class="listDom">Show DOM Html</button>
+            <button class="copyDom">Copy DOM to textarea</button>
         </div>
         <p>See source code on <a href="https://github.com/szabyg/annotate.js">Github</a></p>
         <div id="loadingDiv" style="display:none;"><img alt="" src="spinner.gif"/></div>
