@@ -66,13 +66,13 @@ function convertHtmlToText( inputText ) {
     returnText=returnText.replace(/<a.*href="(.*?)".*>(.*?)<\/a>/gi, " $2 ($1)");
 
     //-- remove span tags but preserve what's inside of them
-    returnText=returnText.replace(/<span.*>/gi, "\n");
+    returnText=returnText.replace(/<span.*>/gi, " ");
     
     //-- remove all inside SCRIPT and STYLE tags
     returnText=returnText.replace(/<script.*>[\w\W]{1,}(.*?)[\w\W]{1,}<\/script>/gi, "");
     returnText=returnText.replace(/<style.*>[\w\W]{1,}(.*?)[\w\W]{1,}<\/style>/gi, "");
     //-- remove all else
-    returnText=returnText.replace(/<(?:.|\s)*?>/g, "");
+    // returnText=returnText.replace(/<(?:.|\s)*?>/g, "");
 
     //-- get rid of more than 2 multiple line breaks:
     returnText=returnText.replace(/(?:(?:\r\n|\r|\n)\s*){2,}/gim, "\n\n");
