@@ -231,7 +231,7 @@ function convertHtmlToText( inputText ) {
         });
 
         jQuery('.copyDom').button().click(function(){
-            var textTemp = convertHtmlToText( jQuery('.content')[0].outerHTML);
+            var textTemp = convertHtmlToText( jQuery('.content')[0].innerHTML);
             alert(textTemp);
             jQuery('.textContent').val(textTemp);
         });
@@ -253,7 +253,9 @@ function convertHtmlToText( inputText ) {
             <textarea class="textContent" cols="50" rows="10">Some text ...</textarea>
             <article typeof="schema:CreativeWork" about="http://stanbol.apache.org/enhancertest">
                 <div property="sioc:content" class="content">
-                <p>The storm prompted the National Weather Service to issue a blizzard warning for a huge swath of the Midwest stretching from eastern Colorado to Wisconsin's Lake Michigan shoreline, including virtually all of Iowa.</p>
+                <p>The storm prompted the National Weather Service to issue a blizzard
+                warning for a huge swath of the Midwest stretching from eastern Colorado
+                to Wisconsin's Lake Michigan shoreline, including virtually all of Iowa.</p>
                 </div>
             </article>
             <button class="enhanceButton">Enhance!</button>
