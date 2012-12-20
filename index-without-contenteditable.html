@@ -231,7 +231,7 @@ function convertHtmlToText( inputText ) {
         });
 
         jQuery('.copyDom').button().click(function(){
-            var textTemp = convertHtmlToText( jQuery('.content').innerHTML);
+            var textTemp = convertHtmlToText( jQuery('.content')[0].innerHTML);
             alert(textTemp);
             jQuery('.textContent').val(textTemp);
         });
@@ -250,7 +250,7 @@ function convertHtmlToText( inputText ) {
             <h2>Test annotate.js on itself</h2>
             <button class="enhanceButton">Enhance!</button>
             <button class="acceptAllButton" style="display:none;">Accept all</button>
-            <textarea class="textContent" cols="50" rows="10">More than 8,000 Syrians have fled their country for Turkey</textarea>
+            <textarea class="textContent" cols="50" rows="10">Some text ...</textarea>
             <article typeof="schema:CreativeWork" about="http://stanbol.apache.org/enhancertest">
                 <div property="sioc:content" class="content">
                 <p>More than 8,000 Syrians have fled their country for Turkey to escape violence, including a military offensive in the Jisr al-Shugur area.
