@@ -41,12 +41,7 @@
     if (window.JSON === undefined ) { 
         document.write('<' + 'script src="lib/json/json2.js">/script>"></' + 'script>');
     }
-    $(document).ready(function(){
-        $.ajaxSetup( {
-            // for mobile devices, hopefully that works
-            timeout: 300000
-        });
-        
+
 function convertHtmlToText(str) {
     str=str.replace(/<br>/gi, "\n");
     str=str.replace(/<p.*>/gi, "\n");
@@ -90,6 +85,12 @@ function convertHtmlToText-old( inputText ) {
     //-- return
     return returnText;
 }
+
+    $(document).ready(function(){
+        $.ajaxSetup( {
+            // for mobile devices, hopefully that works
+            timeout: 300000
+        });
 
 //        _.defer(function(){
         $('#loadingDiv')
