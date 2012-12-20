@@ -229,7 +229,7 @@ function convertHtmlToText( inputText ) {
         });
         
         jQuery('.copyText').button().click(function(){
-            jQuery('.content')[0].text( jQuery('.textContent').val());
+            jQuery('.content').text( jQuery('.textContent').val());
         });
 
         jQuery('.copyDom').button().click(function(){
