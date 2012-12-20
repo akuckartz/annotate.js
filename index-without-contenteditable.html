@@ -46,8 +46,17 @@
             // for mobile devices, hopefully that works
             timeout: 300000
         });
+        
+function convertHtmlToText(str) {
+    str=str.replace(/<br>/gi, "\n");
+    str=str.replace(/<p.*>/gi, "\n");
+    str=str.replace(/<a.*href="(.*?)".*>(.*?)<\/a>/gi, " $2 (Link->$1) ");
+    str=str.replace(/<(?:.|\s)*?>/g, "");
+    return str;
+}
 
-function convertHtmlToText( inputText ) {
+function convertHtmlToText-old( inputText ) {
+	// trims some text at beginning for unknown reasons
     var returnText = "" + inputText;
 
     //-- remove BR tags and replace them with line break
