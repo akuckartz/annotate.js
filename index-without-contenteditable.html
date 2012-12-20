@@ -42,7 +42,9 @@
         document.write('<' + 'script src="lib/json/json2.js">/script>"></' + 'script>');
     }
 
-function convertHtmlToText(str) {
+function convertHtmlToText(inputText) {
+    var str = inputText;
+
     str=str.replace(/<br>/gi, "\n");
     str=str.replace(/<p.*>/gi, "\n");
     str=str.replace(/<a.*href="(.*?)".*>(.*?)<\/a>/gi, " $2 (Link->$1) ");
