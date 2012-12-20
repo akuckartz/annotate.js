@@ -231,7 +231,7 @@ function convertHtmlToText( inputText ) {
         });
 
         jQuery('.copyDom').button().click(function(){
-            var textTemp = convertHtmlToText( jQuery('.content')[0].innerHTML);
+            var textTemp = convertHtmlToText( jQuery('.content')[0].outerHTML);
             alert(textTemp);
             jQuery('.textContent').val(textTemp);
         });
